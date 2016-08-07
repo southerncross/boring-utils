@@ -1,0 +1,29 @@
+@require './palette'
+@require './common/styles'
+@require './features/Heatmap'
+
+*
+  &
+  &:before
+  &:after
+    box-sizing border-box
+
+html
+  font-size 16px
+  line-height 1.2
+  font-family 'Helvetica Neue', Arial, 'Open Sans', 'Hiragino Sans GB', -apple-system, 'Lantinghei SC', 'Microsoft Yahei', sans-serif
+
+.common-wrapper
+  width 100%
+  min-width 768px
+  height 100%
+  min-height 640px
+  color color-grey-darken-1
+
+.common-card
+  display inline-block
+  vertical-align top
+  color color-grey-darken-1
+  background-color white
+  border-radius 2px
+  box-shadow 0px 0px 3px 0px rgba(0, 0, 0, 0.3)

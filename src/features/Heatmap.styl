@@ -1,0 +1,106 @@
+$util-item
+  padding 8px 10px
+  margin 2px 4px
+  font-size 1rem
+  line-height 1
+  color color-grey-darken-4
+  border none
+  cursor pointer
+  &:hover
+    color color-grey-darken-3
+    box-shadow 0px 0px 3px 0px rgba(0, 0, 0, 0.5)
+
+input[type="file"]
+  display none
+
+.heatmap
+  &__not-allow
+    &__overlay
+      position fixed
+      left 0
+      right 0
+      top 0
+      bottom 0
+      background-color rgba(0, 0, 0, .5)
+    &__content
+      position absolute
+      left 50%
+      top 50%
+      width 360px
+      height 300px
+      margin-left -180px
+      margin-top -150px
+      font-size 1.25rem
+      line-height @height
+      text-align center
+      background-color white
+      border-radius 2px
+      box-shadow 2px 2px 10px 0px rgba(0, 0, 0, 0.75)
+
+  &__layout
+    sidebar-width = 140px
+    &__history
+      position fixed
+      left 0
+      top 0
+      bottom 0
+      width sidebar-width
+      text-align center
+      background-color color-grey-lighten-5
+      overflow-y auto
+      overflow-x hidden
+    &__content
+      padding-left sidebar-width
+
+  &__history
+    &__title
+      margin-top 10px
+      font-size .8125rem
+    &__item
+      position relative
+      margin-top 10px
+      transition all .2s
+      &__thumbnail
+        width 114px
+        height 114px
+        padding 4px
+        cursor pointer
+      &__date
+        margin-top 2px
+        color color-grey
+        font-size .8125rem
+      &__del
+        position absolute
+        top -10px
+        right 0
+        display none
+        height 19px
+        width @height
+        font-size 1rem
+        line-height 1
+        color white
+        background-color color-red
+        border-radius 50%
+        cursor pointer
+      &:hover &__del
+        display inline-block
+    &__empty
+      position absolute
+      top 50%
+      left 50%
+      font-size .8125rem
+      color color-grey-lighten-1
+      transform translate(-50%, -50%)
+
+  &__svg
+    display block
+    margin 100px auto 0 auto
+
+  &__utils
+    position fixed
+    top 20px
+    right 40px
+    &__file-input
+      @extends $util-item
+    &__download
+      @extends $util-item
