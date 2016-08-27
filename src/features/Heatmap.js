@@ -109,7 +109,7 @@ class Heatmap extends Component {
     const getCellY = (idx) => parseInt(idx / xNum) * (cellSize + cellMargin)
     const negativeColor = d3.scaleLinear().domain([-1, 0]).range(['red', 'white'])
     const positiveColor = d3.scaleLinear().domain([0, 1]).range(['white', 'blue'])
-    const getCellColor = (d) => d > 0 ? positiveColor(d) : negativeColor(d);
+    const getCellColor = (d) => d > 0 ? positiveColor(d) : negativeColor(d)
 
     const xAxisScale = d3.scaleBand().domain(xHeader).range([0, (cellSize + cellMargin) * xNum])
     const yAxisScale = d3.scaleBand().domain(yHeader).range([0, (cellSize + cellMargin) * yNum])
@@ -220,8 +220,9 @@ class Heatmap extends Component {
                 {
                   dataHistories.map((dataHistory) => {
                     const deleteHistory = () => this.removeDataHistory(dataHistory.id)
+                    const loadHistory = () => this.renderGraph(dataHistory)
                     return (
-                      <div className="heatmap__history__item" key={dataHistory.id}>
+                      <div className="heatmap__history__item" key={dataHistory.id} onClick={loadHistory}>
                         <img className="heatmap__history__item__thumbnail common-card" src={dataHistory.thumbnail}/>
                         <div className="heatmap__history__item__date">{moment(dataHistory.updatedAt).fromNow()}</div>
                         <div className="heatmap__history__item__del" onClick={deleteHistory}>&times;</div>
